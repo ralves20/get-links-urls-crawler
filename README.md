@@ -39,7 +39,7 @@ Get URL's from a given website.
 
 Usage
 ```
-$ get-links-urls <url>           # Get all URLs from a given website
+$ npx get-links-urls <url>           # Get all URLs from a given website
 $ npx get-links-urls --help		 # Help of the usage of the tool   
 ```
 
