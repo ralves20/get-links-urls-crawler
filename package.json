@@ -1,0 +1,52 @@
+{
+	"name": "get-links-urls",
+	"version": "1.0.0",
+	"description": "Web Crawler to a URL to get URLs found in a simple way",
+	"scripts": {
+		"test": "node test.js"
+	},
+	"type": "module",
+	"exports": "./index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ralves20/get-links-urls-crawler"
+	},
+	"bin": {
+		"get-links-urls": "cli.js"
+	},
+	"files": [
+		"./index.js",
+		"./cli.js"
+	],
+	"keywords": [
+		"crawl",
+		"crawler",
+		"web",
+		"urls",
+		"get",
+		"url",
+		"links"
+	],
+	"author": {
+		"name": "Rodrigo C"
+	},
+	"bugs": {
+		"url": "https://github.com/ralves20/get-links-urls-crawler/issues"
+	},
+	"engines": {
+		"node": ">=16"
+	},
+	"devDependencies": {
+		"body-parser": "^1.20.1",
+		"execa": "^6.1.0",
+		"express": "^4.18.2",
+		"qs": "^6.11.0"
+	},
+	"dependencies": {
+		"got": "^11.8.6",
+		"htmlparser2": "^8.0.1",
+		"meow": "^11.0.0",
+		"normalize-url": "^8.0.0",
+		"ora": "^6.1.2"
+	}
+}
