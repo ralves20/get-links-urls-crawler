@@ -20,13 +20,11 @@ const foundFixture = [
 	"http://localhost:3000/child-c",
 ];
 
-const test = async () => {
-	// Start localhost:300 of test-fixture dir
+const shouldEnsureThatCrawlerWorksInAGeneralWay = async () => {
 	const app = express();
 	const server = app.listen(3000);
 	app.use(express.static("./test-fixture/"));
 
-	// Run cli and function over the URL
 	await execa("node", ["cli.js", "localhost:3000"]);
 	const scriptResult = await getSiteUrls("http://localhost:3000");
 
@@ -34,7 +32,6 @@ const test = async () => {
 	fs.rmSync(defaultFileName);
 	server.close();
 
-	// Compare the results
 	[scriptResult, cliResult].forEach((result) => {
 		const unmatchedFixtures = [
 			...result.found.filter((x) => !foundFixture.includes(x)),
@@ -44,7 +41,7 @@ const test = async () => {
 		if (unmatchedFixtures.length === 0) {
 			console.log("✅ Found correct URLs and errors");
 		} else {
-			throw new Error(`❌ Failed to find correct URLs and errors\n${unmatchedFixtures.join(
+			throw new Error(`❌ Failed to find URLs and errors were returned\n${unmatchedFixtures.join(
 				"\n"
 			)}
 		`);
@@ -52,4 +49,4 @@ const test = async () => {
 	});
 };
 
-await test();
+await shouldEnsureThatCrawlerWorksInAGeneralWay();

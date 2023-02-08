@@ -39,8 +39,9 @@ Get URL's from a given website.
 
 Usage
 ```
-$ npx get-links-urls <url>           # Get all URLs from a given website
-$ npx get-links-urls --help		 # Help of the usage of the tool   
+$ npx get-links-urls <url>        						 # Get all URLs from a given single website
+$ npx get-links-urls <url1> <url1> <url1> <url1> <url1>  # Get all URLs from multiple websites
+$ npx get-links-urls --help								 # Help of the usage of the tool   
 ```
 
 Options
@@ -57,8 +58,6 @@ Examples
 
 
 # About myself 
-#### (the guy who received the challenge)
-
 ![ralves20-profile-avatar](https://avatars.githubusercontent.com/u/40844089)
 This is my profile on Github: [ralves20](https://github.com/ralves20)
 

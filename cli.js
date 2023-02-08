@@ -37,9 +37,29 @@ const cli = meow(
 
 const supportedFormats = ["csv", "txt", "json", "xml"];
 
-const [siteUrl] = cli.input;
+const [siteUrl2] = [cli.input];
+let siteUrl = "";
 const { maxDepth, output, alias } = cli.flags;
 const spinner = ora({ prefixText: `${siteUrl}` }).start();
+
+console.log(siteUrl2)
+
+fs.stat(output, function (err, stats) {
+
+	if (err) {
+		return console.error(err);
+	}
+ 
+	fs.unlink(output,function(err){
+		 if(err) return console.log(err);
+		 console.log(`Old output file {output} has been deleted successfully\n\n`);
+	});  
+ });
+
+for(let i=0; i<siteUrl2.length; i++){
+	siteUrl = siteUrl2[i];
+	console.log(siteUrl)
+
 
 if (!siteUrl) {
 	throw new Error("No url provided.");
@@ -81,12 +101,12 @@ try {
 	spinner.stop();
 
 	if (format === "json") {
-		fs.writeFileSync(output, JSON.stringify(data.found, null, 2));
+		fs.appendFileSync(output, JSON.stringify(data.found, null, 2));
 		console.log(`✅ Generated file ${output} with ${data.found.length} urls found`);
 	}
 
 	if (format === "csv" || format === "txt") {
-		fs.writeFileSync(output, data.found.join("\n"));
+		fs.appendFileSync(output, data.found.join("\n"));
 		console.log(`✅ Generated file ${output} with ${data.found.length} urls found`);
 	}
 
@@ -104,7 +124,7 @@ try {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 ${siteMapUrls}
 </urlset>`;
-		fs.writeFileSync(output, sitemap);
+		fs.appendFileSync(output, sitemap);
 		console.log(`✅ Generated file ${output} with ${data.found.length} urls found`);
 	}
 
@@ -116,4 +136,5 @@ ${siteMapUrls}
 } catch (error) {
 	spinner.fail(`Failed to get URLS for ${siteUrl}`);
 	console.error(error);
+}
 }
