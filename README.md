@@ -10,6 +10,8 @@ Belows are the tool used to perform the development of this project.
 - [JavaScript](https://www.javascript.com/)
 - [Express JS](https://expressjs.com/)
 - [Selenium Webdriver](https://www.selenium.dev/)
+- [Node JS](https://nodejs.org/en/)
+- [Node JS For testing](https://nodejs.org/en/) - It's the same Node Library, but in this case to provide a quick solution, Node JS was used for testing purposes instead of any other testing library
 
 ### 1.2. Prerequisites to run
 
@@ -56,6 +58,23 @@ Examples
 	✅ Generated sitemap.xml 150 urls found from the tiven website
 ```
 
+## 3. Tests
+
+In this case, no tests/assertion library was used, in this case to provide a quick solution, Node JS was used for testing purposes instead of any other testing library
+
+### 3.1 Installation / Setup
+
+Download all the dependencies
+```
+npm install
+```
+
+### 2.1 Running the tests
+
+Run the tests with a simple command
+```
+npm run tests
+```
 
 # About myself 
 ![ralves20-profile-avatar](https://avatars.githubusercontent.com/u/40844089)

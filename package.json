@@ -3,8 +3,7 @@
 	"version": "1.0.0",
 	"description": "Web Crawler to a URL to get URLs found in a simple way",
 	"scripts": {
-		"test": "node test.js",
-		"tests:unit": "jest"
+		"tests": "node test.js"
 	},
 	"type": "module",
 	"exports": "./index.js",
