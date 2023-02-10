@@ -9,6 +9,7 @@ function _run_get_urls() {
     printf "\nEnter the site(s) that you want to get the URLs: " 
     read SITE_URLS
 
+    npm install
     npx get-links-urls $SITE_URLS
     killall node
 }
@@ -22,6 +23,7 @@ function _run_get_urls_without_params(){
     printf "\nEnter the site(s) that you want to get the URLs followed by the arguments you want " 
     read SITE_URLS_AND_PARAMS
 
+    npm install
     npx get-links-urls $SITE_URLS_AND_PARAMS
     killall node
 }
