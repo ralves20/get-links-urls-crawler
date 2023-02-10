@@ -33,9 +33,6 @@ To run the webcrawler, you can do in the following way:
 
 **Currently it only works for urls that ends in .com** (if is added any other chars after .com, the cli will not work properly)
 
-```shell
-npx get-links-urls your.given-url.com
-```
 
 ### 2.2 CLI options / arguments
 
