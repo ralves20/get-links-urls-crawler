@@ -22,7 +22,7 @@ const cli = meow(
 		importMeta: import.meta,
 		flags: {
 			maxDepth: {
-				default: 5,
+				default: 3,
 			},
 			output: {
 				default: "urls.json",
