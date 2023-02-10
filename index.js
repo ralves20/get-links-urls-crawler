@@ -41,9 +41,6 @@ export const crawlUrl = async ({
 			onopentag(name, attributes) {
 				if (name === "a" && attributes.href) {
 					if (
-						attributes.href.startsWith("#") ||
-						attributes.href.startsWith("mailto:") ||
-						attributes.href.startsWith("tel:") ||
 						attributes.href.startsWith("http")
 					) {
 						return;
