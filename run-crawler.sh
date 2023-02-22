@@ -5,6 +5,11 @@ printf "This script needs sudo, please enter the password\n"
 
 sudo killall node 2>/dev/null
 
+package='npx'
+if [ `npm list -g | grep -c $package` -ne 0 ]; then
+    npm install -g $package
+fi
+
 function _run_get_urls() {
     printf "\nEnter the site(s) that you want to get the URLs: " 
     read SITE_URLS
